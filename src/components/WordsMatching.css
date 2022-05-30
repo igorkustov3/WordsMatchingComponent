@@ -1,0 +1,19 @@
+/* Стили контейнера в которой находится таблица */
+.words-container  {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+/* Стили колонок */
+.first-col {
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+.second-col {
+    padding-bottom: 10px;
+}

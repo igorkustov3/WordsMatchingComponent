@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useCallback } from 'react';
+import WordsMatching from './components/WordsMatching';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+  /* Иммитируем полученные данных с сервера */
+ const words = [
+    {term: 'арбуз', definition: 'watermelon'},
+    {term: 'яблоко', definition: 'apple'},
+    {term: 'кошка', definition: 'cat'},
+    {term: 'собака', definition: 'dog'},
+    {term: 'груша', definition: 'pear'}
+  ]
+
+  // Обработать результат согласно бизнес-логике приложения
+  const resultProcessed = useCallback((failedAmount)=> {
+    console.log(failedAmount.wrongAnswers);
+    if(failedAmount.wrongAnswers.length === 0) {
+      alert('Поздравляем! Все ответы верные')
+    } else {
+      alert('Конец игры, потренируйтесь еще')
+    }
+  }, []);
+
+
+  return (            
+    <>
+      <WordsMatching content={words} resultProcessed={resultProcessed} />
+    </>
   );
 }
 

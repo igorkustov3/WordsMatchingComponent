@@ -1,0 +1,67 @@
+/* Стили кнопок со словами */
+.common-btn {
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #F8F8FF;
+    cursor: pointer;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+    font-size: 17px;
+}
+
+.btn-default {
+    background-color: #F8F8FF;
+    color: black;
+}
+
+.common-btn:hover {
+    background-color: #7cd09f;
+    color: white;
+    border: none;
+}
+
+.common-btn:active {
+    background-color: #3CB371;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+.common-btn[disabled] {
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+    pointer-events: none;
+    border: none;
+}
+
+.success {
+    background-color: #3CB371;
+    color: white;
+}
+
+.failed {
+    animation-duration: 0.5s;
+    animation-name: wow;
+}
+
+.active {
+    background-color: #1a3b29;
+    color: white;
+}
+
+@keyframes wow {
+    0% {
+        background-color: #F8F8FF;
+        color: black;
+    }
+    50% {
+        background-color: red;
+        color: #fff;
+    }
+    100% {
+        background-color: #F8F8FF;
+        color: black;
+    }
+}
