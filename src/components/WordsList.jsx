@@ -119,9 +119,19 @@ const WordsList = ({content, resultProcessed})=> {
         </tr>
     ));
 
+    const wordDeclination = (number)=> {
+        switch(number % 10) {
+            case 1: return 'слово';
+            case 2: 
+            case 3: 
+            case 4: return 'слова';
+            default: return 'слов'; 
+        }
+    }
+
     return(
         <div className="words-container">
-            <h2 className='words-title'>Вы правильно ответили на: {count} слов</h2>
+            <h2 className='words-title'>Вы правильно ответили на: {count} {wordDeclination(count)}</h2>
             <table>
                 <tbody>
                     {words}
